@@ -27,7 +27,7 @@
 }
 
 .App h3 {
-  margin-top: 200px;
+  margin-top: 100px;
   text-align: left;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
@@ -39,5 +39,13 @@
 
 .App hr {
   border-top: 1px solid rgba(211, 77, 0, 0.89);
-  max-width: 800px;
+  max-width: 300px;
+}
+
+.App form {
+  margin: 0 auto;
+}
+
+.App footer {
+  margin-top: 200px;
 }
