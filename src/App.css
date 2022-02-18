@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.App-header {
+  margin-top: 80px;
+}
+
+.App h1 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+  padding-top: 20px;
+  color: rgb(85, 85, 85);
+}
+
+.App h2 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: rgb(85, 85, 85);
+}
+
+.App h3 {
+  margin-top: 200px;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 5px;
+  color: rgb(85, 85, 85);
+  text-transform: uppercase;
+}
+
+.App hr {
+  border-top: 1px solid rgba(211, 77, 0, 0.89);
+  max-width: 800px;
+}
