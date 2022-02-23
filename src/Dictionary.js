@@ -28,17 +28,19 @@ export default function Dictionary() {
         <h2>DICTIONARY</h2>
         <hr />
       </header>
-      <div className="search">
+      <div>
         <h1>What would you like to search for?</h1>
 
         <form className="mt-4" onSubmit={search}>
-          <input
-            type="text"
-            placeholder="Search"
-            autoFocus={true}
-            onChange={getQuery}
-          />
-          <input type="submit" value="search" />
+          <div className="searchBar">
+            <input
+              type="text"
+              placeholder="Search"
+              autoFocus={true}
+              onChange={getQuery}
+            />
+            <input type="submit" value="search" />
+          </div>
         </form>
       </div>
       <Results results={results} />
