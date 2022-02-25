@@ -5,7 +5,7 @@ export default function Examples(props) {
     return (
       <div className="Examples">
         <span className="font-italic example">
-          <strong>Example: {props.examples}</strong>
+          <strong>Example:</strong> {props.examples}
         </span>
       </div>
     );

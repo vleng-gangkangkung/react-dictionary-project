@@ -3,47 +3,66 @@ import React, { useState } from "react";
 import Results from "./Results";
 import "./App.css";
 
-export default function Dictionary() {
-  let [keyword, setKeyword] = useState("");
+export default function Dictionary(props) {
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
+  let [loaded, setLoaded] = useState(false);
+
+  function load(keyword) {
+    setLoaded(true);
+    search(keyword);
+  }
+
+  function search() {
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+    axios.get(apiUrl).then(handleResponse);
+    console.log(apiUrl);
+  }
 
   function handleResponse(response) {
     setResults(response.data[0]);
   }
 
-  function search(event) {
+  function handleSubmit(event) {
     event.preventDefault();
-    alert(`Searching for ${keyword}`);
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
-    console.log(apiUrl);
+    search();
   }
   function getQuery(event) {
     setKeyword(event.target.value);
   }
 
-  return (
-    <div className="Dictionary">
-      <header className="App-header">
-        <h2>DICTIONARY</h2>
-        <hr />
-      </header>
-      <div>
-        <h1>What would you like to search for?</h1>
+  if (loaded) {
+    return (
+      <div className="Dictionary">
+        <header className="App-header">
+          <h2>DICTIONARY</h2>
+        </header>
+        <section>
+          <h1>What would you like to search for?</h1>
 
-        <form className="mt-4" onSubmit={search}>
-          <div className="searchBar">
-            <input
-              type="text"
-              placeholder="Search"
-              autoFocus={true}
-              onChange={getQuery}
-            />
-            <input type="submit" value="search" />
+          <form className="mt-4" onSubmit={handleSubmit}>
+            <div className="row ">
+              <div class="col-10 ">
+                <input
+                  type="text"
+                  defaultValue={props.defaultKeyword}
+                  autoFocus={true}
+                  onChange={getQuery}
+                />
+              </div>
+              <div className="col-2 ">
+                <input type="submit" value="search" />
+              </div>
+            </div>
+          </form>
+          <div className="hint">
+            Suggested words: 'abhorrent', 'badinage', 'consanguineous'
           </div>
-        </form>
+        </section>
+        <Results results={results} />
       </div>
-      <Results results={results} />
-    </div>
-  );
+    );
+  } else {
+    return load();
+  }
 }
