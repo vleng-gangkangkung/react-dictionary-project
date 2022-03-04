@@ -7,7 +7,15 @@ function App() {
       <Dictionary defaultKeyword="consanguineous" />
 
       <footer>
-        <small>Coded by Vanessa Leng</small>
+        <small>
+          Coded by Vanessa Leng |{" "}
+          <a
+            href="https://github.com/vleng-gangkangkung/react-dictionary-project"
+            target="_blank"
+          >
+            Github
+          </a>
+        </small>
       </footer>
     </div>
   );

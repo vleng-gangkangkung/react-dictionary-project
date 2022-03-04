@@ -53,7 +53,7 @@ section {
   color: white;
   font-weight: 600;
   font-size: 12px;
-  margin-block: 20px;
+  margin-block: 10px;
 }
 h4 span {
   background-color: #ff5722;
@@ -135,4 +135,9 @@ h4 span {
   background-color: #ececec;
   border-radius: 15px;
   list-style: none;
+}
+
+img {
+  border-radius: 4px;
+  margin-bottom: 12px;
 }
