@@ -76,8 +76,11 @@ h4 span {
 }
 
 .App footer {
-  margin-top: 200px;
   text-align: center;
+}
+
+.App footer a {
+  color: #ff5722;
 }
 
 .App .mainWord {
