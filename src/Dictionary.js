@@ -77,6 +77,7 @@ export default function Dictionary(props) {
           </div>
         </section>
         <Results results={results} />
+
         <Photos photos={photos} />
       </div>
     );
